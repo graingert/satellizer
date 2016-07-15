@@ -11,10 +11,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
 (function(window, angular, undefined) {
   'use strict';
-
-  if (!window.location.origin) {
-    window.location.origin = window.location.protocol + '//' + window.location.hostname + (window.location.port ? (':' + window.location.port) : '');
-  }
+  var windowLocationOrigin = window.location.origin || window.location.protocol + '//' + window.location.hostname + (window.location.port ? (':' + window.location.port) : '');
 
   angular.module('satellizer', [])
     .constant('SatellizerConfig', {
